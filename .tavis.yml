@@ -13,12 +13,10 @@ after_success:
   - docker build -t kerz1488/multi-nginx ./nginx
   - docker build -t kerz1488/multi-server ./server
   - docker build -t kerz1488/multi-worker ./worker
-  # Log in the docker CLI
+  # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-# Take those images and push item to docker hub
+  # Take those images and push them to docker hub
   - docker push kerz1488/multi-client
   - docker push kerz1488/multi-nginx
   - docker push kerz1488/multi-server
   - docker push kerz1488/multi-worker
-
-
